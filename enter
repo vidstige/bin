@@ -1,0 +1,6 @@
+#!/bin/bash --init-file
+source $1
+if [ -n "$ENV_NAME" ]; then
+	PS1=($ENV_NAME) $PS1
+fi
+
