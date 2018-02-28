@@ -1,0 +1,13 @@
+#!/bin/bash
+ID=$(cat ~/.simplepush)
+TITLE=$1
+MESSAGE=$2
+if [[ -z "$MESSAGE" ]]; then
+    MESSAGE=$TITLE
+    TITLE="notify"
+fi
+if [[ -z "$MESSAGE" ]]; then
+    MESSAGE="done"
+fi
+curl --fail --silent --show-error "https://api.simplepush.io/send/$ID/$TITLE/$MESSAGE" > /dev/null
+
