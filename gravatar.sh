@@ -12,6 +12,5 @@ URL="http://www.gravatar.com/avatar/$HASH?s=$SIZE&d=404"
 echo $URL
 
 # Alright, grab the file, store it.
-#curl -s $URL > $DESTINATION
 curl -s -o $DESTINATION --fail $URL
 
